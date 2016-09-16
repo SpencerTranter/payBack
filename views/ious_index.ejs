@@ -1,1 +1,35 @@
-// temp
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Index</title>
+    <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="assets/layout.css"/>
+  </head>
+
+  <body>
+    <div class="wrapper">
+
+    /*  <% include ./partials/_header %> */
+
+      <main>
+        <div class="mainDiv">
+          <h1> IOU's </h1>
+          /*<% for(var i = 0; i < urls.length; i++) { %> */
+            <div class = "content">
+
+              <form method="POST" action="/urls/edit?_method=DELETE">
+                <p> IOU </p>
+                  <button type="submit">Delete resource</button>
+              </form>
+
+              </div>
+            /* <% }; %> */
+        </div>
+      </main>
+
+      /* <%include ./partials/_footer %> */
+
+    </div>
+  </body>
+</html>
