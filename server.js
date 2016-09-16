@@ -39,7 +39,7 @@ MongoClient.connect(MONGODB_URI, (err, dbInstance) => {
     res.render("ious_new");
   });
 
-  app.get("/ious/edit", (req, res) => {
+  app.get("/ious/:id", (req, res) => {
     res.render("ious_edit");
   });
 
