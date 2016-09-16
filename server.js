@@ -30,9 +30,11 @@ app.get("/ious/new", (req, res) => {
   res.render("ious_new");
 });
 
-app.get("/ious/:id", (req, res) => {
+app.get("/ious/edit", (req, res) => {
   res.render("ious_edit");
 });
+
+
 
 
 // Initiate server
