@@ -14,6 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const MongoClient = require('mongodb').MongoClient;
 const MONGODB_URI = 'mongodb://localhost:27017/ious';
+const payBack = require('./payBack.js');
 
 // Set default port as 8080
 const PORT = process.env.PORT || 8080;
@@ -43,11 +44,14 @@ MongoClient.connect(MONGODB_URI, (err, dbInstance) => {
   });
 
   app.post('/ious', (req, res) => {
-    let form = {
+    let iou = {
       title: req.body.title,
       description: req.body.description,
       dateDue: '2016-12-05'
     };
+    payBack.insertIOU(db, iou, (err, result) => {
+      res.redirect('/ious');
+    });
   });
 
   // Initiate server
