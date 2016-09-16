@@ -1,0 +1,30 @@
+{
+  "name": "payback",
+  "version": "1.0.0",
+  "description": "Online IOU tracker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amorriscode/payBack.git"
+  },
+  "keywords": [
+    "payback",
+    "iou",
+    "money",
+    "lending"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amorriscode/payBack/issues"
+  },
+  "homepage": "https://github.com/amorriscode/payBack#readme",
+  "dependencies": {
+    "ejs": "^2.5.2",
+    "express": "^4.14.0"
+  }
+}
