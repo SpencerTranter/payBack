@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Index</title>
+    <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="../assets/layout.css"/>
+  </head>
+
+  <body>
+    <div class="wrapper">
+
+     /* <% include ./partials/_header %> */
+
+      <main>
+        <div>
+          <div class = "content">
+            <h2> Edit your IOU: </h2>
+            <form method="POST" action="/urls/edit?_method=PUT">
+              <input id="editIOU" type="text" name="editFriend" placeholder="http://" style="width: 300px">
+              <input id="editIOU" type="text" name="editTitle" placeholder="http://" style="width: 300px">
+              <input id="editIOU" type="text" name="editDescription" placeholder="http://" style="width: 300px">
+              <input id="editIOU" type="text" name="editDateDue" placeholder="http://" style="width: 300px">
+              <button type="submit">Update IOU</button>
+            </form>
+          </div>
+        </div>
+      </main>
+
+     /* <%include ./partials/_footer %> */
+
+  </div>
+</body>
+</html>
