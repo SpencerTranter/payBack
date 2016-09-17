@@ -12,6 +12,10 @@ const bodyParser = require("body-parser");
 // Extended no longer has default value so must be set
 app.use(bodyParser.urlencoded({ extended: true }));
 
+const MongoClient = require('mongodb').MongoClient;
+const MONGODB_URI = 'mongodb://localhost:27017/ious';
+const payBack = require('./payBack.js');
+
 // Set default port as 8080
 const PORT = process.env.PORT || 8080;
 
@@ -29,13 +33,10 @@ MongoClient.connect(MONGODB_URI, (err, dbInstance) => {
   });
 
   app.get("/ious", (req, res) => {
-<<<<<<< HEAD
-=======
     payBack.getIOUs(db, (err, IOUs) => {
       let templateVars = { ious: IOUs };
       res.render('ious_index', templateVars);
     });
->>>>>>> upstream/master
   });
 
   app.get("/ious/new", (req, res) => {
@@ -66,4 +67,4 @@ MongoClient.connect(MONGODB_URI, (err, dbInstance) => {
     console.log(`Server listening on port ${PORT}!`);
   });
 
-//});
+});
