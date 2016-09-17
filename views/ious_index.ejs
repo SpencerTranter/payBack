@@ -10,25 +10,27 @@
   <body>
     <div class="wrapper">
 
-    /*  <% include ./partials/_header %> */
+
 
       <main>
         <div class="mainDiv">
           <h1> IOU's </h1>
-            <%= ious %>
-              <div class = "content">
+            <% for(curr in ious){ %>
 
-                <form method="POST" action="/ious/edit?_method=DELETE">
+              <div class = "content">
+                <p> <%=ious[curr].title%>
+                <form method="POST" action="/ious?_method=DELETE">
                   <p> IOU </p>
                     <button type="submit">Delete resource</button>
                 </form>
 
                 </div>
-            /* <% }; %> */
+                <% }; %>
+
         </div>
       </main>
 
-      /* <%include ./partials/_footer %> */
+
 
     </div>
   </body>
