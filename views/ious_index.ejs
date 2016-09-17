@@ -15,15 +15,15 @@
       <main>
         <div class="mainDiv">
           <h1> IOU's </h1>
-          /*<% for(var i = 0; i < urls.length; i++) { %> */
-            <div class = "content">
+            <%= dataBase.name %>
+              <div class = "content">
 
-              <form method="POST" action="/urls/edit?_method=DELETE">
-                <p> IOU </p>
-                  <button type="submit">Delete resource</button>
-              </form>
+                <form method="POST" action="/urls/edit?_method=DELETE">
+                  <p> IOU </p>
+                    <button type="submit">Delete resource</button>
+                </form>
 
-              </div>
+                </div>
             /* <% }; %> */
         </div>
       </main>

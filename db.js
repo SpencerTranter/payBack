@@ -6,7 +6,7 @@ exports.users = {
     lastName: 'Wayne',
     password: '123batman'
   },
-  {
+  user2 = {
     _id: 2,
     email: 'damian@wayneindustries.com',
     firstName: 'Damian',

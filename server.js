@@ -23,12 +23,13 @@ MongoClient.connect(MONGODB_URI, (err, dbInstance) => {
   }
   db = dbInstance;
 
+
   app.get("/", (req, res) => {
     res.redirect("/ious_index");
   });
 
   app.get("/ious", (req, res) => {
-    res.render("ious_index");
+    res.render("ious_index", {"dataBase": db.iou});
   });
 
   app.get("/ious/new", (req, res) => {
@@ -55,4 +56,4 @@ MongoClient.connect(MONGODB_URI, (err, dbInstance) => {
     console.log(`Server listening on port ${PORT}!`);
   });
 
-});
+//});
