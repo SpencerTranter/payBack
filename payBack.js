@@ -43,3 +43,12 @@ exports.getURLs = function(db, cb) {
     return cb(null, result);
   });
 }
+
+exports.getIOU = function(db, iou, cb) {
+  db.collection('ious').findOne({ '_id': iou.id }, (err, result) => {
+    if (err) {
+      return cb(err);
+    }
+    return cb(null, result);
+  });
+}
