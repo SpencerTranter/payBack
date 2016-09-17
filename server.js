@@ -43,7 +43,11 @@ MongoClient.connect(MONGODB_URI, (err, dbInstance) => {
   });
 
   app.get("/ious/:id", (req, res) => {
-    res.render("ious_edit");
+    let iou = { id: req.params.id };
+    payBack.getIOU(db, iou, (err, result) => {
+      let templateVars = { iou: result };
+      res.render("ious_edit", templateVars);
+    });
   });
 
   app.post('/ious', (req, res) => {
