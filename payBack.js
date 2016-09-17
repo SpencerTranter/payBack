@@ -35,7 +35,7 @@ exports.deleteURL = function(db, iou, cb) {
   });
 }
 
-exports.getURLs = function(db, cb) {
+exports.getIOUs = function(db, cb) {
   db.collection('ious').find().toArray((err, result) => {
     if (err) {
       return cb(err);
