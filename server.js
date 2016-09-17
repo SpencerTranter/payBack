@@ -25,11 +25,17 @@ MongoClient.connect(MONGODB_URI, (err, dbInstance) => {
 
 
   app.get("/", (req, res) => {
-    res.redirect("/ious_index");
+    res.redirect("/ious");
   });
 
   app.get("/ious", (req, res) => {
-    res.render("ious_index", {"dataBase": db.iou});
+<<<<<<< HEAD
+=======
+    payBack.getIOUs(db, (err, IOUs) => {
+      let templateVars = { ious: IOUs };
+      res.render('ious_index', templateVars);
+    });
+>>>>>>> upstream/master
   });
 
   app.get("/ious/new", (req, res) => {
@@ -37,7 +43,11 @@ MongoClient.connect(MONGODB_URI, (err, dbInstance) => {
   });
 
   app.get("/ious/:id", (req, res) => {
-    res.render("ious_edit");
+    let iou = { id: req.params.id };
+    payBack.getIOU(db, iou, (err, result) => {
+      let templateVars = { iou: result };
+      res.render("ious_edit", templateVars);
+    });
   });
 
   app.post('/ious', (req, res) => {
