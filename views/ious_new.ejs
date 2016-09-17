@@ -9,6 +9,13 @@
 
   <body>
     <div class="wrapper">
+      <nav>
+        <ul class="nav navbar-nav">
+            <li><a href="/ious">Home</a></li>
+            <li><a href="/ious/new">New IOU</a></li>
+            <li><a href="/ious/edit">Edit IOU</a></li>
+        </ul>
+      </nav>
 
      /* <% include ./partials/_header %> */
 
@@ -17,10 +24,10 @@
           <div class = "content">
             <form action="/ious" method="POST" style="margin:150px;">
               <label for="newIOU">Create a new IOU</label>
-              <input id="newIOU" type="text" name="friend" placeholder="" style="width: 300px" required>
-              <input id="newIOU" type="text" name="title" placeholder="" style="width: 300px">
-              <input id="newIOU" type="text" name="description" placeholder="" style="width: 300px" required>
-              <input id="longURL" type="text" name="dueDate" placeholder="" style="width: 300px">
+              <input id="newIOU" type="text" name="friend" placeholder="Friend Name:" style="width: 300px" required>
+              <input id="newIOU" type="text" name="title" placeholder="Title:" style="width: 300px" required>
+              <input id="newIOU" type="text" name="description" placeholder="Description:" style="width: 300px" required>
+              <input id="longURL" type="text" name="dueDate" placeholder="Due Date:" style="width: 300px">
               <input type="submit" value="Submit">
             </form>
           </div>
