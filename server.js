@@ -28,11 +28,14 @@ MongoClient.connect(MONGODB_URI, (err, dbInstance) => {
   db = dbInstance;
 
   app.get("/", (req, res) => {
-    res.redirect("/ious_index");
+    res.redirect("/ious");
   });
 
   app.get("/ious", (req, res) => {
-    res.render("ious_index");
+    payBack.getIOUs(db, (err, IOUs) => {
+      let templateVars = { ious: IOUs };
+      res.render('ious_index', templateVars);
+    });
   });
 
   app.get("/ious/new", (req, res) => {
